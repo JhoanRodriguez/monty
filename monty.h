@@ -1,12 +1,12 @@
-#ifndef MONTY_H
-#define MONTY_H
-
+#ifndef _MONTY_H_
+#define _MONTY_H_
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include <string.h>
+
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -23,7 +23,6 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
-
 
 /**
  * struct instruction_s - opcode and its function
