@@ -6,7 +6,13 @@
 #include <stdarg.h>
 #include <string.h>
 
+typedef struct glob_vars
+{
+	int glob_int;
+} glob_t;
 
+extern glob_t glob_vars;
+glob_t glob_vars;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,6 +44,12 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+char *get_line(FILE *fptr);
+char **split_line(char *line);
+void *_realloc(void *ptr, size_t old_size, size_t new_size);
+
+int checker(unsigned int line_number, char **commands, stack_t **stack);
+void (*get_commands(char *opcode))(stack_t **stack, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
