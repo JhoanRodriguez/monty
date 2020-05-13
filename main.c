@@ -9,27 +9,16 @@
 int main(int argc, char *argv[])
 {
 	char *line = NULL;
-	FILE *fptr;
 
-		if (argc != 2)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
-	fptr = fopen(argv[1],"r");
-	if (fptr == NULL)
-		return (EXIT_FAILURE);
 
-	if (!fptr)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		return (EXIT_FAILURE);
-	}
-
-	line = get_line(fptr);
+	line = get_line(argv[1]);
 	if (!line)
 		return EXIT_FAILURE;
- 
-    fclose(fptr);
+
 	return (EXIT_SUCCESS);
 }

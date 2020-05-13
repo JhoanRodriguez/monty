@@ -4,13 +4,24 @@
  * get_line - get a string from the stdin
  * Return: on success returne the number of characters read
  */
-char *get_line(FILE *fptr)
+char *get_line(char *file)
 {
+	FILE *fptr;
 	char *line = NULL, *aux = NULL;
 	char **commands = NULL;
 	unsigned int line_number = 1;
 	size_t n = 0;
 	stack_t **head = NULL;
+
+	fptr = fopen(file, "r");
+	if (fptr == NULL)
+		return (NULL);
+	
+	if (!fptr)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", file);
+		return (NULL);
+	}
 
 	if (getline(&line, &n, fptr) == EOF)
 	{
@@ -28,5 +39,6 @@ char *get_line(FILE *fptr)
 		line_number++;
 		
 	}
+	fclose(fptr);
 	return (aux);
 }
