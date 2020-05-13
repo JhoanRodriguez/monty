@@ -7,11 +7,11 @@
 char *get_line(char *file)
 {
 	FILE *fptr;
-	char *line = NULL, *aux = NULL;
+	char *line = NULL;
 	char **commands = NULL;
 	unsigned int line_number = 1;
 	size_t n = 0;
-	stack_t **head = NULL;
+	stack_t *head = NULL;
 
 	fptr = fopen(file, "r");
 	if (fptr == NULL)
@@ -23,22 +23,15 @@ char *get_line(char *file)
 		return (NULL);
 	}
 
-	if (getline(&line, &n, fptr) == EOF)
+	while (getline(&line, &n, fptr) != -1)
 	{
-		free(line);
-		exit(0);
-	}
-	while (getline(&line, &n, fptr) != EOF)
-	{
-		aux = strdup(line);
-		free(line);
-		commands = split_line(aux);
+		commands = split_line(line);
+
 		if (commands)
-			checker(line_number, commands, head);
+			checker(line_number, commands, &head);
 
 		line_number++;
-		
 	}
 	fclose(fptr);
-	return (aux);
+	return (line);
 }

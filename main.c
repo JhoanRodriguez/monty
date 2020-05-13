@@ -8,17 +8,13 @@
  */
 int main(int argc, char *argv[])
 {
-	char *line = NULL;
-
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
 
-	line = get_line(argv[1]);
-	if (!line)
-		return EXIT_FAILURE;
+	get_line(argv[1]);
 
 	return (EXIT_SUCCESS);
 }
