@@ -10,7 +10,6 @@ void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int sum;
-	int nodes = 0;
 
     if (temp == NULL || temp->next == NULL)
     {
@@ -29,4 +28,3 @@ void add(stack_t **stack, unsigned int line_number)
 
 	free(temp);
 }
-
