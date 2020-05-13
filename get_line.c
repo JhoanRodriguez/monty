@@ -30,6 +30,7 @@ char *get_line(char *file)
 		if (commands)
 			checker(line_number, commands, &head);
 
+		free(commands);
 		line_number++;
 	}
 	fclose(fptr);
