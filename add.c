@@ -11,20 +11,20 @@ void add(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 	int sum;
 
-    if (temp == NULL || temp->next == NULL)
-    {
-        printf("L%u: can't add, stack too short\n", line_number);
+	if (temp == NULL || temp->next == NULL)
+	{
+		printf("L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
-    }
+	}
 
-    while (temp->next != NULL)
+	while (temp->next != NULL)
 	{
 		temp = temp->next;
 	}
-	
+
 	sum = temp->n + temp->prev->n;
 	temp->prev->n = sum;
-    temp->prev->next = NULL;
+	temp->prev->next = NULL;
 
 	free(temp);
 }
