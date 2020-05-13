@@ -15,7 +15,7 @@ char **split_line(char *line)
 	if (tokens == NULL)
 		exit(1);
 
-	token = strtok(line, " \t\r\n\a :");
+	token = strtok(line, " \t\r\n\a");
 	for (i = 0; token != NULL; i++)
 	{
 		tokens[i] = token;
@@ -26,7 +26,7 @@ char **split_line(char *line)
 			if (tokens == NULL)
 				exit(1);
 		}
-		token = strtok(NULL, " \t\r\n\a :");
+		token = strtok(NULL, " \t\r\n\a");
 	}
 	tokens[i] = NULL;
 	return (tokens);
