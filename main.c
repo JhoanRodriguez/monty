@@ -16,8 +16,9 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
-
 	fptr = fopen(argv[1],"r");
+	if (fptr == NULL)
+		return (EXIT_FAILURE);
 
 	if (!fptr)
 	{
