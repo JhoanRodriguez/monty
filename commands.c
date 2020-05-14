@@ -16,10 +16,10 @@ void (*_commands(char *opcode, unsigned int ln))(stack_t **head, unsigned int)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
-		{"nop", sub},
-		{"nop", _div},
-		{"nop", mul},
-		{"nop", mod},
+		{"sub", sub},
+		{"div", _div},
+		{"mul", mul},
+		{"mod", mod},
 		{NULL, _free}
 	};
 	unsigned int x = 0;
