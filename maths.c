@@ -53,7 +53,7 @@ void sub(stack_t **stack, unsigned int line_number)
 		temp = temp->next;
 	}
 
-	sub = temp->n - temp->prev->n;
+	sub = temp->prev->n - temp->n;
 	temp->prev->n = sub;
 	temp->prev->next = NULL;
 
