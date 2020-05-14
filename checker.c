@@ -15,7 +15,7 @@ int checker(unsigned int line_number, char **commands, stack_t **stack)
 	{
 
 		glob_vars.glob_int = atoi(commands[1]);
-		get_commands(commands[0], line_number)(stack, line_number);
+		_commands(commands[0], line_number)(stack, line_number);
 	}
 	else if (strcmp(commands[0], "push") == 0)
 	{
@@ -23,7 +23,7 @@ int checker(unsigned int line_number, char **commands, stack_t **stack)
 		exit(EXIT_FAILURE);
 	}
 	else
-		get_commands(commands[0], line_number)(stack, line_number);
+		_commands(commands[0], line_number)(stack, line_number);
 	return (0);
 }
 

@@ -52,7 +52,7 @@ void *_realloc(void *ptr, size_t old_size, size_t new_size);
 int is_number(char *commands);
 
 int checker(unsigned int line_number, char **commands, stack_t **stack);
-void (*get_commands(char *opcode, unsigned int line_number))(stack_t **stack, unsigned int);
+void (*_commands(char *opcode, unsigned int ln))(stack_t **stack, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
