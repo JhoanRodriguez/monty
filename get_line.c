@@ -16,13 +16,12 @@ char *get_line(char *file)
 	fptr = fopen(file, "r");
 	if (fptr == NULL)
 		return (NULL);
-	
+
 	if (!fptr)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file);
 		return (NULL);
 	}
-
 	while (getline(&line, &n, fptr) != -1)
 	{
 		commands = split_line(line);

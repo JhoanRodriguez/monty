@@ -22,7 +22,7 @@ void (*get_commands(char *opcode, unsigned int line_number))(stack_t **stack, un
 	while (ops[x].opcode != NULL)
 	{
 		if (strcmp(ops[x].opcode, opcode) == 0)
-				return (ops[x].f);
+			return (ops[x].f);
 		x++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);

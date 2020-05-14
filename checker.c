@@ -14,6 +14,7 @@ int checker(unsigned int line_number, char **commands, stack_t **stack)
 	{
 		if(is_number(commands[1]) == 1)
 		{
+
 			glob_vars.glob_int = atoi(commands[1]);
 	    	get_commands(commands[0], line_number)(stack, line_number);
 		}
@@ -23,7 +24,6 @@ int checker(unsigned int line_number, char **commands, stack_t **stack)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	else
 		get_commands(commands[0], line_number)(stack, line_number);
 	return (0);
 }
