@@ -13,7 +13,10 @@ void push(stack_t **stack, unsigned int line_number)
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		return;
+	{
+		printf("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 
 	tmp = *stack;
 

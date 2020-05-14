@@ -21,7 +21,7 @@ char *get_line(char *file)
 	if (!fptr)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file);
-		return (NULL);
+		exit(EXIT_FAILURE);
 	}
 	while (getline(&line, &n, fptr) != -1)
 	{
