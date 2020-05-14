@@ -53,7 +53,7 @@ void sub(stack_t **stack, unsigned int line_number)
 		temp = temp->next;
 	}
 
-	sub = temp->prev->n - temp->n ;
+	sub = temp->prev->n - temp->n;
 	temp->prev->n = sub;
 	temp->prev->next = NULL;
 
@@ -88,7 +88,7 @@ void _div(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	div = temp->prev->n / temp->n ;
+	div = temp->prev->n / temp->n;
 	temp->prev->n = div;
 	temp->prev->next = NULL;
 
