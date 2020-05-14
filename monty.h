@@ -45,13 +45,14 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void _free(stack_t *args);
+void _sfree(stack_t *args);
+void _free(stack_t **head, unsigned int n);
 char *get_line(char *file);
 char **split_line(char *line);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
 int is_number(char *commands);
 
-int checker(unsigned int line_number, char **commands, stack_t **stack, FILE *fptr);
+int checker(unsigned int line_number, char **commands, stack_t **head, FILE *fptr);
 void (*_commands(char *opcode, unsigned int ln))(stack_t **stack, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);

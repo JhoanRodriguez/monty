@@ -6,7 +6,7 @@
  * Return: Function pointer to operator given
  *
  */
-void (*_commands(char *opcode, unsigned int ln))(stack_t **stack, unsigned int)
+void (*_commands(char *opcode, unsigned int ln))(stack_t **head, unsigned int)
 {
 	instruction_t ops[] = {
 		{"push", push},
@@ -16,7 +16,7 @@ void (*_commands(char *opcode, unsigned int ln))(stack_t **stack, unsigned int)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
-		{NULL, NULL}
+		{NULL, _free}
 	};
 	unsigned int x = 0;
 
@@ -27,5 +27,5 @@ void (*_commands(char *opcode, unsigned int ln))(stack_t **stack, unsigned int)
 		x++;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
-	exit(EXIT_FAILURE);
+	return (ops[x].f);
 }

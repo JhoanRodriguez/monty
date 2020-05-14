@@ -34,7 +34,7 @@ char *get_line(char *file)
 		line_number++;
 	}
 	free(line);
-	_free(head);
+	_sfree(head);
 	fclose(fptr);
 	return (line);
 }

@@ -3,18 +3,21 @@
 /**
  * _free - free allocated memory
  * @head: argument to free
+ * @n: number of line readed
  */
-void _free(stack_t *head)
+void _free(stack_t **head, unsigned int n)
 {
 	stack_t *tmp;
+	(void) n;
 
 	if (head == NULL)
 		return;
 
-	while (head != NULL)
+	while (*head != NULL)
 	{
-		tmp = head;
-		head = head->next;
+		tmp = *head;
+		*head = (*head)->next;
 		free(tmp);
 	}
+	exit(EXIT_FAILURE);
 }

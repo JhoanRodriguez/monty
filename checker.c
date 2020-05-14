@@ -11,10 +11,8 @@
  */
 int checker(unsigned int line, char **commands, stack_t **stack, FILE *fptr)
 {
-
 	if (is_number(commands[1]) == 1)
 	{
-
 		glob_vars.glob_int = atoi(commands[1]);
 		_commands(commands[0], line)(stack, line);
 	}
@@ -28,4 +26,3 @@ int checker(unsigned int line, char **commands, stack_t **stack, FILE *fptr)
 		_commands(commands[0], line)(stack, line);
 	return (0);
 }
-
