@@ -3,8 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdarg.h>
+#include <ctype.h>
 #include <string.h>
+
 
 typedef struct glob_vars
 {
@@ -47,9 +48,10 @@ typedef struct instruction_s
 char *get_line(char *file);
 char **split_line(char *line);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
+int is_number(char *commands);
 
 int checker(unsigned int line_number, char **commands, stack_t **stack);
-void (*get_commands(char *opcode))(stack_t **stack, unsigned int);
+void (*get_commands(char *opcode, unsigned int line_number))(stack_t **stack, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);

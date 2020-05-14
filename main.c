@@ -13,11 +13,11 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	read = get_line(argv[1]);
 	free (read);
 
-	return (EXIT_SUCCESS);
+	return(EXIT_SUCCESS);
 }

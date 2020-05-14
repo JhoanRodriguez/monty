@@ -6,7 +6,7 @@
  * Return: Function pointer to operator given
  *
  */
-void (*get_commands(char *opcode))(stack_t **stack, unsigned int)
+void (*get_commands(char *opcode, unsigned int line_number))(stack_t **stack, unsigned int)
 {
 	instruction_t ops[] = {
 		{"push", push},
@@ -19,12 +19,12 @@ void (*get_commands(char *opcode))(stack_t **stack, unsigned int)
 		{NULL, NULL}
 	};
 	unsigned int x = 0;
-	while (x < (sizeof(ops) / sizeof(ops[0])))
+	while (ops[x].opcode != NULL)
 	{
 		if (strcmp(ops[x].opcode, opcode) == 0)
 				return (ops[x].f);
-				
 		x++;
 	}
-	return (0);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);
 }
