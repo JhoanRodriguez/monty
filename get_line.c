@@ -15,9 +15,6 @@ char *get_line(char *file)
 	stack_t *head = NULL;
 
 	fptr = fopen(file, "r");
-	if (fptr == NULL)
-		return (NULL);
-
 	if (!fptr)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file);

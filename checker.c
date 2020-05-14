@@ -19,6 +19,8 @@ int checker(unsigned int line, char **commands, stack_t **stack, FILE *fptr)
 	else if (strcmp(commands[0], "push") == 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line);
+		free(commands);
+		_sfree(*stack);
 		fclose(fptr);
 		exit(EXIT_FAILURE);
 	}
