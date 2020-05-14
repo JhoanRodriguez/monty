@@ -9,6 +9,10 @@ int is_number(char *commands)
 {
 	if (!commands)
 		return (0);
+
+	if (*commands == 45)
+		commands++;
+
 	while (*commands != '\0')
 	{
 		if (!isdigit(*commands))
