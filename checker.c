@@ -10,8 +10,8 @@
  */
 int checker(unsigned int line_number, char **commands, stack_t **stack)
 {
-	
-	if(is_number(commands[1]) == 1)
+
+	if (is_number(commands[1]) == 1)
 	{
 
 		glob_vars.glob_int = atoi(commands[1]);
@@ -26,3 +26,4 @@ int checker(unsigned int line_number, char **commands, stack_t **stack)
 		get_commands(commands[0], line_number)(stack, line_number);
 	return (0);
 }
+
