@@ -45,6 +45,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void _free(stack_t *args);
 char *get_line(char *file);
 char **split_line(char *line);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
