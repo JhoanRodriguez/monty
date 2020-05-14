@@ -51,7 +51,7 @@ char **split_line(char *line);
 void *_realloc(void *ptr, size_t old_size, size_t new_size);
 int is_number(char *commands);
 
-int checker(unsigned int line_number, char **commands, stack_t **stack);
+int checker(unsigned int line_number, char **commands, stack_t **stack, FILE *fptr);
 void (*_commands(char *opcode, unsigned int ln))(stack_t **stack, unsigned int);
 
 void push(stack_t **stack, unsigned int line_number);

@@ -28,7 +28,7 @@ char *get_line(char *file)
 		commands = split_line(line);
 
 		if (commands)
-			checker(line_number, commands, &head);
+			checker(line_number, commands, &head, fptr);
 
 		free(commands);
 		line_number++;
