@@ -2,7 +2,7 @@
 
 /**
  * _free - free allocated memory
- * @args: argument to free
+ * @head: argument to free
  */
 void _free(stack_t *head)
 {
@@ -10,7 +10,7 @@ void _free(stack_t *head)
 
 	if (head == NULL)
 		return;
-	
+
 	while (head != NULL)
 	{
 		tmp = head;

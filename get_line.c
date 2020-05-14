@@ -2,6 +2,7 @@
 
 /**
  * get_line - get a string from the stdin
+ * @file: file to be read
  * Return: on success returne the number of characters read
  */
 char *get_line(char *file)

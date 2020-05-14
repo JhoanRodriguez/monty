@@ -6,11 +6,11 @@
  *
  *Return: void
  */
- void push(stack_t **stack, unsigned int line_number)
- {
-	 stack_t *new, *tmp;
-	 (void) line_number;
-     
+void push(stack_t **stack, unsigned int line_number)
+{
+	stack_t *new, *tmp;
+	(void) line_number;
+
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		return;
@@ -34,4 +34,4 @@
 		new->next = NULL;
 		new->prev = NULL;
 	}
- }
+}
