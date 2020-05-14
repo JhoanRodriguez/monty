@@ -9,15 +9,15 @@
 void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
-    int swap_tmp;
-	
-    if (temp == NULL || temp->next == NULL)
-    {
-        printf("L%u: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
-    }
+	int swap_tmp;
 
-    while (temp->next != NULL)
+	if (temp == NULL || temp->next == NULL)
+	{
+		printf("L%u: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	while (temp->next != NULL)
 	{
 		temp = temp->next;
 	}
